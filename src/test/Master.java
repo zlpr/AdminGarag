@@ -14,8 +14,14 @@ public class Master {
     }
 
     public int getJob(){ // загруженость
+        int i =0;
 
-        return orders.size();
+        for (Order o: orders){
+            if (o.getStatus()== Status.V) i++;
+
+        }
+
+        return i;
     }
 
     @Override
