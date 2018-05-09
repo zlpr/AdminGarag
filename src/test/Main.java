@@ -1,16 +1,34 @@
 package test;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
  * Created by zorm on 07.05.2018.
  */
-public class Main {
+public class Main implements Serializable {
+
+    ListOrder listOrder;
+    ListMaster listMaster;
+    Garage garage;
+
+
+
+
+
+
 
 
     public static void main(String[] args) {
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date d = new Date();
 
         ListMaster listMaster = new ListMaster();
+        ListOrder listOrder = new ListOrder();
+
+
 
         listMaster.add(new Master("jdkfj"));
         listMaster.add(new Master("jdkd"));
@@ -18,7 +36,7 @@ public class Main {
 
         listMaster.get(1).getOrders().add(new Order(new Date(),new Date(),21255));
 
-        ListOrder listOrder = new ListOrder();
+
 
         Order f = new Order(new Date(),new Date(118,04,23),1245);
         f.addMasters(listMaster.get(2));
@@ -43,6 +61,21 @@ public class Main {
 
         System.out.println(new Master("dfkjdkkkk").toString());
     }
+
+
+    public static Date addDays(Date date, int days)
+    {
+        Calendar c = Calendar.getInstance();
+        c.setTime(date);
+        c.add(Calendar.DATE, days);
+        return c.getTime();
+    }
+
+
+
+
+
+
 
 
 

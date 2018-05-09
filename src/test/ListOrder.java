@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Comparator;
 import java.util.Date;
 
@@ -103,6 +104,26 @@ public class ListOrder extends ArrayList<Order> {
         return ar;
 
 
+    }
+
+    public void allSetaDatePlannedStart(int days){
+
+        for (Order o:this){
+
+            if(o.getStatus()== Status.P){
+                o.setDatePlannedStart(addDays(o.getDatePlannedStart(),days));
+
+            }
+        }
+
+    }
+
+    public static Date addDays(Date date, int days)
+    {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, days); //minus number would decrement the days
+        return cal.getTime();
     }
 
 

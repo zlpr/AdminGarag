@@ -29,7 +29,17 @@ public class Order {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(Garage garage,Status status) {
+
+        if (this.getStatus() != Status.V){
+           if (status == Status.V){garage.bPlace();
+            this.status=status;}
+        }else if (this.getStatus() == Status.V){
+            if (status !=Status.V) {
+                garage.aPlace();
+                this.status = status;
+            }
+        }else
 
 
         this.status = status;

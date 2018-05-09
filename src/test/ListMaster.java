@@ -57,4 +57,6 @@ public class ListMaster extends ArrayList<Master> {
         }
         return s+" }\n";
     }
+
+
 }
