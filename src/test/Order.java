@@ -30,6 +30,8 @@ public class Order {
     }
 
     public void setStatus(Status status) {
+
+
         this.status = status;
     }
 
@@ -46,7 +48,9 @@ public class Order {
     }
 
     public void addMasters(Master master) {
-        this.masters.add(master);
+        if (masters.contains(master)){
+            return;
+        }else  this.masters.add(master);
     }
     public void removMasters(Master master) {
         this.masters.remove(master);

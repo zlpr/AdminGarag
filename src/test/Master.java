@@ -37,6 +37,7 @@ public class Master {
     }
 
     public void addOrder(Order order) {// добавить работы
+        if (orders.contains(order)) return;
         this.orders.add(order);
     }
 
