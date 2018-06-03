@@ -1,4 +1,4 @@
-package test;
+package test1;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -23,7 +23,7 @@ public class ListOrder extends ArrayList<Order> {
                 return o1.getDateOfAdoption().compareTo(o2.getDateOfAdoption());
             }
         };
-
+        this.sort(o);
 
     }
     public void sortDateFinish(){
@@ -34,7 +34,7 @@ public class ListOrder extends ArrayList<Order> {
                 return o1.getDateFinish().compareTo(o2.getDateFinish());
             }
         };
-
+        this.sort(o);
     }
     public void sortDatePlannedStart(){
 
@@ -44,7 +44,7 @@ public class ListOrder extends ArrayList<Order> {
                 return o1.getDatePlannedStart().compareTo(o2.getDatePlannedStart());
             }
         };
-
+        this.sort(o);
     }
     public void sortPrice(){
 
@@ -55,6 +55,7 @@ public class ListOrder extends ArrayList<Order> {
                 return Integer.compare(o1.getPrice(), o2.getPrice());
             }
         };
+        this.sort(o);
 
     }
 
@@ -78,7 +79,7 @@ public class ListOrder extends ArrayList<Order> {
         return ar;
     }
 
-    public ListOrder orderStatus( Status s){
+    public ListOrder orderStatus(Status s){
         ListOrder ar= new ListOrder();
 
 
